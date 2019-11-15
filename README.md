@@ -1,4 +1,1 @@
-# league_predict
-# league_predict
-# league_predict
-# league_predict
+Predict possible outcome of a league of legends match
