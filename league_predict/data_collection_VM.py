@@ -82,12 +82,12 @@ if __name__ == "__main__": #main function to run python
 
     #run the main program
     match_count = 0
-    for player in tqdm(player_list[5:]):
+    for player in tqdm(player_list[6:]):
         print("seed user {}".format(player))
         all_other_players,len_matches = get_games_1_player(player,10)
         placeholder = None
         print("query {} other players".format(len(all_other_players)))
         for o_pl in all_other_players: #for each other player, query 5 matches
-            placeholder = get_games_1_player(o_pl,5)
+            placeholder = get_games_1_player(o_pl,3)
         match_count += len_matches
         print("Done for user {}, now we have {} full matches".format(player,match_count))
