@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": "/Users/wazzie27/Documents/LOL_CSP/LOL"
+		}
+	],
+	"settings": {
+		"python.pythonPath": "azure-cosmosdb-sdk-environment/bin/python3"
+	}
+}
