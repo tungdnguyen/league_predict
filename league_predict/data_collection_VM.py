@@ -40,24 +40,27 @@ def get_games_1_player(summonerId,game_num):
     match_hist = league.get_player_match_hist(account_id)
     all_other_players = []
     final_matches = []
-    for match in match_hist[:game_num]:
-        game_stats = league.get_game_stats(match)
-        try:
-            match_dict = {}
-            match_dict["id"] = str(game_stats['gameId'])
-            match_dict["stats"] = game_stats
-            players_in_game = league.get_players_id_1_match(game_stats,exclude=summonerId) 
-            #exclude the player that call the query
-            all_other_players += players_in_game
-            insert_item(match_container,match_dict)
-            final_matches.append(match_dict['id'])
-        except:
-            print("cant get match hist for this")
-            pass
-    all_other_players = list(set(all_other_players)) #list of players play with the current summonerId
-    player_dict['matches'] = final_matches
-    insert_item(player_container,player_dict) #send to cosmos
-    return all_other_players,len(final_matches)
+    if match_hist:
+        for match in match_hist[:game_num]:
+            game_stats = league.get_game_stats(match)
+            try:
+                match_dict = {}
+                match_dict["id"] = str(game_stats['gameId'])
+                match_dict["stats"] = game_stats
+                players_in_game = league.get_players_id_1_match(game_stats,exclude=summonerId) 
+                #exclude the player that call the query
+                all_other_players += players_in_game
+                insert_item(match_container,match_dict)
+                final_matches.append(match_dict['id'])
+            except:
+                print("cant get match hist for this")
+                pass
+        all_other_players = list(set(all_other_players)) #list of players play with the current summonerId
+        player_dict['matches'] = final_matches
+        insert_item(player_container,player_dict) #send to cosmos
+        return all_other_players,len(final_matches)
+    else:
+        return 0
 
 
 if __name__ == "__main__": #main function to run python
@@ -79,7 +82,7 @@ if __name__ == "__main__": #main function to run python
 
     #run the main program
     match_count = 0
-    for player in tqdm(player_list):
+    for player in tqdm(player_list[5:]):
         print("seed user {}".format(player))
         all_other_players,len_matches = get_games_1_player(player,10)
         placeholder = None
