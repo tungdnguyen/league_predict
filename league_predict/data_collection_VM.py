@@ -69,8 +69,8 @@ if __name__ == "__main__": #main function to run python
     database = get_database("league_all_data")
 
     # create container 
-    player_container = get_container(database,"players")
-    match_container = get_container(database,"matches")
+    player_container = create_container(database,"players")
+    match_container = create_container(database,"matches")
 
     #got list of players of diamond I
     league = league_api.LeagueAPI()
