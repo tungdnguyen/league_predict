@@ -9,7 +9,7 @@ class LeagueAPI():
 
     def reset_key(self):
         print("Key expired!")
-        val = input("Enter new api key value")
+        val = input("Enter new api key value") #enter new API key to proceed
         self.set_key(val)
 
     def set_key(self,api_key):
