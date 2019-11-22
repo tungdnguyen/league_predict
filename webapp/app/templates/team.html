@@ -1,0 +1,103 @@
+<html>
+	<head>
+		<title> League Project</title>
+	</head>
+	<h1> Input Teams</h1>
+	<form action="" method="post" novalidate>
+		{{ form.hidden_tag() }}
+		<p>
+			{{ form.blueplayer1.label }}<br>
+			{{ form.blueplayer1(size=32) }}
+		</p>
+		<p>
+			{{ form.bluechamp1.label }}<br>
+			{{ form.bluechamp1(size=32) }}
+		</p>
+		<p>
+			{{ form.blueplayer2.label }}<br>
+			{{ form.blueplayer2(size=32) }}
+		</p>
+		<p>
+			{{ form.bluechamp2.label }}<br>
+			{{ form.bluechamp2(size=32) }}
+		</p>
+		<p>
+			{{ form.blueplayer3.label }}<br>
+			{{ form.blueplayer3(size=32) }}
+		</p>
+		<p>
+			{{ form.bluechamp3.label }}<br>
+			{{ form.bluechamp3(size=32) }}
+		</p>
+		<p>
+			{{ form.blueplayer4.label }}<br>
+			{{ form.blueplayer4(size=32) }}
+		</p>
+		<p>
+			{{ form.bluechamp4.label }}<br>
+			{{ form.bluechamp4(size=32) }}
+		</p>
+		<p>
+			{{ form.blueplayer5.label }}<br>
+			{{ form.blueplayer5(size=32) }}
+		</p>
+		<p>
+			{{ form.bluechamp5.label }}<br>
+			{{ form.bluechamp5(size=32) }}
+		</p>
+		<p>
+			{{ form.redplayer1.label }}<br>
+			{{ form.redplayer1(size=32) }}
+		</p>
+		<p>
+			{{ form.redchamp1.label }}<br>
+			{{ form.redchamp1(size=32) }}
+		</p>
+		<p>
+			{{ form.redplayer2.label }}<br>
+			{{ form.redplayer2(size=32) }}
+		</p>
+		<p>
+			{{ form.redchamp2.label }}<br>
+			{{ form.redchamp2(size=32) }}
+		</p>
+		<p>
+			{{ form.redplayer3.label }}<br>
+			{{ form.redplayer3(size=32) }}
+		</p>
+		<p>
+			{{ form.redchamp3.label }}<br>
+			{{ form.redchamp3(size=32) }}
+		</p>
+		<p>
+			{{ form.redplayer4.label }}<br>
+			{{ form.redplayer4(size=32) }}
+		</p>
+		<p>
+			{{ form.redchamp4.label }}<br>
+			{{ form.redchamp4(size=32) }}
+		</p>
+		<p>
+			{{ form.redplayer5.label }}<br>
+			{{ form.redplayer5(size=32) }}
+		</p>
+		<p>
+			{{ form.redchamp5.label }}<br>
+			{{ form.redchamp5(size=32) }}
+		</p>
+		<p>{{ form.submit() }}</p>
+		<hr>
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+		<ul>
+			{% for message in messages %}
+			<li>{{ message}}</li>
+			{%endfor%}
+		</ul>
+		{%endif%}
+		{%endwith%}
+		
+			
+		
+	</form>
+</html>

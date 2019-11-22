@@ -1,0 +1,8 @@
+from flask_Wtf import FlaskForm
+from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms.validators import DataRequired
+
+class TeamForm(FlaskForm):
+	player1=StringField('Player 1', validators=[DataRequired()])
+	champ1=StringField('Champion 1', validators=[DataRequired()])
+	submit=SubmitField('Predict')
